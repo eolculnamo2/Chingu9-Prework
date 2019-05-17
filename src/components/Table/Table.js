@@ -1,15 +1,20 @@
 import React, { useContext } from 'react';
 import { MeteorContext } from '../../state/state';
-import SearchInput from '../SearchInput/SearchInput';
 import DataRow from '../DataRow/DataRow';
 
 function Table() {
   const context = useContext( MeteorContext );
+  const { apiData } = context.state;
 
   return (
     <div>
-      <SearchInput />
       <DataRow />
+      {apiData.map( x => {
+        return <DataRow
+                 data={x}
+                 key={x.id}
+               />
+      })}
     </div>
   )
 }

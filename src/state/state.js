@@ -2,7 +2,7 @@ import React from 'react';
 import { actions } from './actions';
 
 const initialState = {
-  test: '',
+  apiData: [],
 }
 
 const MeteorContext = React.createContext(initialState);

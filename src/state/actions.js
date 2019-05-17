@@ -1,11 +1,11 @@
 const ACTION_TYPES = {
-  TEST_ONE: 'TEST_ONE',
+  SET_API_DATA: 'SET_API_DATA',
 }
 
 const actions = {
-  [ACTION_TYPES.TEST_ONE]: (state, action) => ({
+  [ACTION_TYPES.SET_API_DATA]: (state, action) => ({
     ...state,
-    selectedLayer: action.payload,
+    apiData: action.payload,
   }),
 }
 
