@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useReducer } from 'react';
+import { initialState, MeteorContext, reducer } from './state/state';
+import Table from './components/Table/Table';
 import './App.css';
 
+
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-app-wrap">
+      <h1>Chingu 9 Prework: Tier 3</h1>
+      <MeteorContext.Provider value={{state, dispatch}}>
+        <Table />
+      </MeteorContext.Provider>
     </div>
-  );
+  )
 }
 
 export default App;
