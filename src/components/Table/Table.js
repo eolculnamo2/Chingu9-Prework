@@ -4,15 +4,22 @@ import DataRow from '../DataRow/DataRow';
 
 function Table() {
   const context = useContext( MeteorContext );
-  const { apiData } = context.state;
+  const { displayData } = context.state;
 
   return (
     <div>
       <DataRow />
-      {apiData.map( x => {
+      {displayData.map( x => {
         return <DataRow
-                 data={x}
+                 fall={x.fall}
+                 geolocation={x.geolocation}
+                 id={x.id}
                  key={x.id}
+                 mass={x.mass}
+                 name={x.name}
+                 nameType={x.nametype}
+                 recclass={x.recclass}
+                 year={x.year}
                />
       })}
     </div>

@@ -9,14 +9,19 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
+
     fetch('https://data.nasa.gov/resource/gh4g-9sfh.json')
     .then( res => res.json() )
-    .then( payload => dispatch({type: ACTION_TYPES.SET_API_DATA, payload}) )
-  }, [])
+    .then( payload => {
+      dispatch({type: ACTION_TYPES.SET_API_DATA, payload});
+      dispatch({type: ACTION_TYPES.SET_DISPLAY_DATA, payload});
+    });
+
+  }, []);
 
   return (
-    <div className="main-app-wrap">
-      <h1>Chingu 9 Prework: Tier 3</h1>
+    <div className="app__main-wrap">
+      <h1 className="app__heading">Chingu 9 Prework: Tier 3</h1>
       <MeteorContext.Provider value={{state, dispatch}}>
         <SearchInput />
         <Table />

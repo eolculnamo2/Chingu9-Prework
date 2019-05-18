@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './DataRow.css';
 
 function DataRow(props) {
   const {
@@ -14,16 +15,16 @@ function DataRow(props) {
   } = props;
 
   return (
-    <div>
-      <div>{name}</div>
-      <div>{id}</div>
-      <div>{nameType}</div>
-      <div>{recclass}</div>
-      <div>{mass}</div>
-      <div>{fall}</div>
-      <div>{year}</div>
-      <div>{geolocation.latitude}</div>
-      <div>{geolocation.longitude}</div>
+    <div className="data-row__flex-wrap">
+      <div className="data-row__item data-row__mobile">{name}</div>
+      <div className="data-row__item">{id}</div>
+      <div className="data-row__item">{nameType}</div>
+      <div className="data-row__item">{recclass}</div>
+      <div className="data-row__item data-row__mobile">{mass}</div>
+      <div className="data-row__item">{fall}</div>
+      <div className="data-row__item data-row__mobile">{year.split('-')[0]}</div>
+      <div className="data-row__item">{geolocation.latitude}</div>
+      <div className="data-row__item">{geolocation.longitude}</div>
     </div>
   )
 }

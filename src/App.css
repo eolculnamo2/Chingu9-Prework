@@ -1,7 +1,16 @@
 body {
   margin: 0;
+  background-color: #5CDB95;
 }
 
-.main-app-wrap {
+.app__main-wrap {
   width: 100%;
+}
+
+.app__heading {
+  color: white;
+  background-color: #379683;
+  margin-top: 0;
+  padding: 1em 1em;;
+  box-sizing: border-box;
 }
